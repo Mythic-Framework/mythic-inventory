@@ -123,6 +123,7 @@ function RetrieveComponents()
 	Drugs = exports["mythic-base"]:FetchComponent("Drugs")
 	Robbery = exports["mythic-base"]:FetchComponent("Robbery")
 	Laptop = exports["mythic-base"]:FetchComponent("Laptop")
+	Version = exports["mythic-base"]:FetchComponent("Version")
 end
 
 AddEventHandler("Core:Shared:Ready", function()
@@ -151,7 +152,8 @@ AddEventHandler("Core:Shared:Ready", function()
 		"Banking",
 		"Drugs",
 		"Robbery",
-		"Laptop"
+		"Laptop",
+		"Version"
 	}, function(error)
 		if #error > 0 then
 			return
@@ -251,6 +253,8 @@ AddEventHandler("Core:Shared:Ready", function()
 
 			return true
 		end, 2)
+
+		Version:Check('Mythic-Framework/Mythic-VersionCheckers', GetCurrentResourceName())
 	end)
 end)
 
