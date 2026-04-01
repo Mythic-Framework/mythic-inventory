@@ -387,7 +387,7 @@ INVENTORY = {
 					type = "SET_PLAYER_SLOT",
 					data = {
 						slot = slot,
-						itemData = itemData,
+						itemData = itemData ~= nil and itemData or json.null,
 					},
 				})
 			end,
@@ -408,7 +408,7 @@ INVENTORY = {
 					type = "SET_SECONDARY_SLOT",
 					data = {
 						slot = slot,
-						itemData = itemData,
+						itemData = itemData ~= nil and itemData or json.null,
 					},
 				})
 			end,

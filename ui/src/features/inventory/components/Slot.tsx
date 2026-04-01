@@ -539,7 +539,7 @@ const SlotComponent = ({ slot, item, invType, owner, disabled = false }: SlotPro
             </Typography>
           )}
 
-          {slot <= 5 && !secondary.shop && (
+          {slot <= 5 && !secondary.shop && invType === player.invType && (
             <Typography
               sx={{
                 position: 'absolute',
