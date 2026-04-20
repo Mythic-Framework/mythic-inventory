@@ -82,7 +82,7 @@ _itemsSource["tools"] = {
 	{
 		name = "racing_crappy",
 		label = "Homemade Phone Dongle",
-		description = "Its a really shitty dongly boi",
+		description = "A low budget homemade phone dongle, it works but it won\'t last long.",
 		price = 0,
 		isUsable = true,
 		isRemoved = false,

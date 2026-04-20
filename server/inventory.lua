@@ -2131,20 +2131,20 @@ INVENTORY = {
 					end
 
 					if used then
-						local retard = false
+						local callbackTriggered = false
 						if ItemCallbacks[item.Name] ~= nil then
 							for k, callback in pairs(ItemCallbacks[item.Name]) do
-								retard = true
+								callbackTriggered = true
 								callback(source, item, itemsDatabase[item.Name])
 							end
 						elseif itemData.imitate and ItemCallbacks[itemData.imitate] ~= nil then
 							for k, callback in pairs(ItemCallbacks[itemData.imitate]) do
-								retard = true
+								callbackTriggered = true
 								callback(source, item, itemsDatabase[item.Name])
 							end
 						end
 
-						if retard then
+						if callbackTriggered then
 							TriggerClientEvent("Markers:ItemAction", source, item)
 						end
 					end

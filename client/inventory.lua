@@ -556,7 +556,7 @@ INVENTORY = {
 	Toggle = function(self)
 		_disabled = not _disabled
 	end,
-	Dumbfuck = {
+	Container = {
 		Open = function(self, data)
 			Callbacks:ServerCallback("Inventory:Server:Open", data, function(state)
 				if state then
@@ -843,7 +843,7 @@ RegisterNUICallback("MergeSlot", function(data, cb)
 				local veh = NetToVeh(SecondInventory.netId)
 				if veh then
 					local vEnt = Entity(veh)
-					if vEnt and not vEnt.state.Owned and not vEnt.state.PleaseDoNotFuckingDelete then
+					if vEnt and not vEnt.state.Owned and not vEnt.state.PreventDespawn then
 						TriggerServerEvent("Vehicles:Server:StopDespawn", SecondInventory.netId)
 					end
 				end
@@ -871,7 +871,7 @@ RegisterNUICallback("SwapSlot", function(data, cb)
 				local veh = NetToVeh(SecondInventory.netId)
 				if veh then
 					local vEnt = Entity(veh)
-					if vEnt and not vEnt.state.Owned and not vEnt.state.PleaseDoNotFuckingDelete then
+					if vEnt and not vEnt.state.Owned and not vEnt.state.PreventDespawn then
 						TriggerServerEvent("Vehicles:Server:StopDespawn", SecondInventory.netId)
 					end
 				end
@@ -899,7 +899,7 @@ RegisterNUICallback("MoveSlot", function(data, cb)
 				local veh = NetToVeh(SecondInventory.netId)
 				if veh then
 					local vEnt = Entity(veh)
-					if vEnt and not vEnt.state.Owned and not vEnt.state.PleaseDoNotFuckingDelete then
+					if vEnt and not vEnt.state.Owned and not vEnt.state.PreventDespawn then
 						TriggerServerEvent("Vehicles:Server:StopDespawn", SecondInventory.netId)
 					end
 				end
